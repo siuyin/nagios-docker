@@ -15,6 +15,7 @@ ADD run/apache2 /etc/service/apache2/run
 
 RUN mkdir -p /etc/service/nagios3
 ADD run/nagios3 /etc/service/nagios3/run
+RUN dpkg-statoverride --update --add nagios www-data 2710 /var/lib/nagios3/rw; dpkg-statoverride --update --add nagios nagios 751 /var/lib/nagios3
 
 RUN mkdir -p /etc/my_init.d
 ADD rc/postfix.sh /etc/my_init.d/postfix.sh
