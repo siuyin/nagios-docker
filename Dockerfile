@@ -9,6 +9,7 @@ RUN htpasswd -b -c /etc/nagios3/htpasswd.users nagiosadmin insecure
 # set environment so that vim and less work properly
 ENV HOME=/root
 ENV TERM=xterm
+ENV ROOT_EMAIL=someone@example.com
 
 RUN mkdir -p /etc/service/apache2
 ADD run/apache2 /etc/service/apache2/run
