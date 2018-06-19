@@ -1,7 +1,7 @@
 FROM phusion/baseimage:0.9.16
 #FROM ubuntu:14.04
 RUN apt-get update
-RUN apt-get install nagios3 nagios3-common nagios-plugin* nagios-nrpe* swaks -y 
+RUN apt-get install nagios3 nagios3-common nagios-plugin* nagios-nrpe* swaks postfix libsasl2-modules -y 
 RUN postconf -e mynetworks="0.0.0.0/0"
 RUN usermod -a -G nagios www-data
 RUN htpasswd -b -c /etc/nagios3/htpasswd.users nagiosadmin insecure
